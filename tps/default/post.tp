@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title><@$(this.name)@></title>
+	</head>
+	<body>		
+		<@ for(var i=0;i<3;i++){ @>
+			<div><@$(this.content)@></div>
+		<@ } @>
+	</body>
+</html>
