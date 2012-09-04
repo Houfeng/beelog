@@ -3,20 +3,18 @@
  */
 var sys = require('sys'),
 	http = require('http'),
-	config = require('../config.js').config,
-	routeMgr = require('./routeMgr.js').routeMgr,
-	global = require('./global.js').global;
+	config = require('../config.js'),
+	routeMgr = require('./routeMgr.js'),
+	global = require('./global.js');
 
-/**
- * HTTP Server 
- * @type {Object}
- */
-var server = {
+
+(function(owner) {
 	/**
 	 * 启动服务
-	 * @return {void} 无返回值 
+	 * @param  {int} _port  端口
+	 * @return {void}       无返回值 
 	 */
-	start: function() {
+	owner.start = function(_port) {
 		global.onServerStart();
 		http.createServer(function(_request, _response) {
 			var context = {
@@ -25,9 +23,7 @@ var server = {
 			};
 			global.onService(context);
 			routeMgr.onService(context);
-		}).listen(config.port);
-		console.log("服务已启动,端口:" + config.port);
-	}
-};
-server.start();
-
+		}).listen(_port);
+		console.log("服务已启动,端口:" + _port);
+	};
+})(exports);
