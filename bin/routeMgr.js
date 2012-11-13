@@ -20,8 +20,10 @@ var fileHandler = require('./handlers/file.js');
 	owner.addRoute = function(route) {
 		if (route && route.pattern && route.handler) {
 			owner.placeHolderExp.lastIndex = 0;
+			//生成url匹配测试表达式 ，将“占位符”的表达式，替换为 “任意非‘/’” 的表达式
 			var matchString = '^' + route.pattern.replace(owner.placeHolderExp, '([^\\/]+)') + '$';
 			route.matchExp = new RegExp(matchString, 'gim');
+			//取到所有路由key
 			route.routeKeys = route.pattern.match(owner.placeHolderExp) || [];
 			for (var i = 0; i < route.routeKeys.length; i++) {
 				route.routeKeys[i] = route.routeKeys[i].replace('{', '').replace('}', '');
