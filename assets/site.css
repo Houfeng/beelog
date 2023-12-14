@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: FangsongGB2312;
+  src: url('/fonts/FS-GB2312.ttf');
+}

@@ -1,0 +1,16 @@
+{% extends "./common/layout.html" %}
+
+{% block head %}
+<title>首页 | Noka</title>
+{% endblock %}
+
+{% block body %}
+<div class="w-full max-w-screen-md mx-auto rounded-md">
+  <div class="max-sm:text-center max-sm:mb-5 sm:m-6 sm:mt-0">
+    <img class="rounded-md" src="/images/banner.jpg"/>
+  </div>
+  <div>
+    {% include "./common/post_list.html" %}
+  </div>
+</div>
+{% endblock %}
