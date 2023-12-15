@@ -1,4 +1,4 @@
-import { Controller, Get, HttpRequest, Req, View } from "noka";
+import { Controller, Get, View } from "noka";
 
 @Controller("/")
 export class HomeController {
@@ -6,9 +6,8 @@ export class HomeController {
 
   @Get("/")
   @View("index")
-  async index(@Req() req: HttpRequest) {
+  async index() {
     return Controller.Result({
-      URL: req.URL,
       posts: new Array(10).fill(1),
     });
   }

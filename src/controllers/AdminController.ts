@@ -1,4 +1,4 @@
-import { Controller, Get, HttpRequest, Req, View } from "noka";
+import { Controller, Get, View } from "noka";
 
 @Controller("/admin")
 export class AboutController {
@@ -6,7 +6,7 @@ export class AboutController {
 
   @Get("/")
   @View("admin")
-  async index(@Req() req: HttpRequest) {
-    return Controller.Result({ URL: req.URL });
+  async index() {
+    return Controller.Result({});
   }
 }
