@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block body %}
-<div class="w-full max-w-screen-md mx-auto rounded-md">
-  <div class="max-sm:text-center max-sm:mb-5 sm:m-6 sm:mt-0">
-    <img class="rounded-md" src="/images/banner.jpg"/>
+<div class="w-full max-w-screen-md mx-auto bg-base-100">
+  <div class="max-sm:mb-5 sm:p-6 sm:hover:bg-base-200 rounded-md overflow-hidden transition-colors">
+    {% include "./common/tag_list.html" %}
   </div>
   <div>
     {% include "./common/post_list.html" %}

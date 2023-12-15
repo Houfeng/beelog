@@ -7,7 +7,7 @@ module.exports = {
   daisyui: {
     themes: [
       "lofi",
-      "night"
+      "black",
     ],
   },
   theme: {
