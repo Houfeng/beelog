@@ -28,6 +28,7 @@ module.exports = {
   theme: {
     fontFamily: {
       serif: ['STFangsong', 'Fangsong', 'FangsongGB2312', 'ui-serif', 'serif'],
+      sans: ['sans'],
     },
   }
 }
