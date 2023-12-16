@@ -17,7 +17,7 @@
       <input id="theme" type="checkbox" class="theme-controller" />
       <script>
         ((theme) => {
-          theme.checked = "{{$context.cookies.get('theme')}}" === "lofi";
+          theme.checked = "{{$context.cookies.get('theme') | default('lofi')}}" === "lofi";
           theme.addEventListener("change", () => {
             const name = `${theme.checked ? "lofi" : "black"}`;
             document.documentElement.setAttribute("data-theme", name);
