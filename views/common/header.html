@@ -1,6 +1,6 @@
-<div class="navbar bg-base-100 shadow-sm sticky top-0 bg-opacity-80 backdrop-blur-md z-10">
+<div class="navbar bg-base-100 shadow-sm sticky top-0 bg-opacity-75 backdrop-blur-sm z-10">
   <div class="navbar-start">
-    <a href="/" class="btn btn-ghost text-lg px-4 pl-3 rounded-md">
+    <a href="/" class="btn btn-ghost text-lg px-4 pl-3 rounded-sm">
       <img class="w-[32px] rounded-full" src="/images/avatar.jpg" />
       <span class="hidden sm:inline-flex">Beelog</span>
     </a>
@@ -17,9 +17,9 @@
       <input id="theme" type="checkbox" class="theme-controller" />
       <script>
         ((theme) => {
-          theme.checked = "{{$context.cookies.get('theme') | default('lofi')}}" === "lofi";
+          theme.checked = "{{$context.cookies.get('theme') | default('light')}}" === "light";
           theme.addEventListener("change", () => {
-            const name = `${theme.checked ? "lofi" : "black"}`;
+            const name = `${theme.checked ? "light" : "dark"}`;
             document.documentElement.setAttribute("data-theme", name);
             document.cookie = `theme=${name}`;
           });
