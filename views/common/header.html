@@ -1,20 +1,18 @@
+{% macro header($context) %}
 <div class="navbar bg-base-100 shadow-sm border-b border-gray-100/10 sticky top-0 bg-opacity-75 backdrop-blur-md z-10">
   <div class="navbar-start">
     <a href="/" class="btn btn-ghost text-lg px-4 pl-3 rounded-sm">
-      <img class="w-[32px] rounded-full" src="/images/avatar.jpg" />
+      <img class="w-[32px] rounded-full" src="/images/beelog.jpg" />
       <span class="hidden sm:inline-flex">Beelog</span>
     </a>
   </div>
   <div class="navbar-center">
-    <ul class="menu menu-horizontal text-base/5">
-      <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/' else ''}}" href="/">日志</a></li>
-      <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/about' else ''}}" href="/about">关于</a></li>
-    </ul>
+    {{ caller() }}
   </div>
   <div class="navbar-end">
     <label class="swap swap-rotate w-12">
       <!-- this hidden checkbox controls the state -->
-      <input id="theme" type="checkbox" class="theme-controller" />
+      <input id="theme" type="checkbox" class="theme-controller hidden" />
       <script>
         ((theme) => {
           theme.checked = "{{$context.cookies.get('theme') | default('light')}}" === "light";
@@ -38,3 +36,4 @@
     </label>
   </div>
 </div>
+{% endmacro %}

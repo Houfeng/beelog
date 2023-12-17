@@ -1,11 +1,11 @@
 import { Controller, Get, View } from "noka";
 
-@Controller("/admin")
-export class AboutController {
+@Controller("/write")
+export class WriteController {
   constructor() {}
 
   @Get("/")
-  @View("admin")
+  @View("write")
   async index() {
     return Controller.Result({});
   }

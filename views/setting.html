@@ -1,0 +1,42 @@
+{% extends "./common/admin.html" %}
+
+{% block head %}
+<title>设置 | Beelog</title>
+{% endblock %}
+
+{% block body %}
+<div class="w-full max-w-screen-md mx-auto bg-base-100">
+  <form class="mb-6 p-6">
+    <div class="divider font-sans font-light text-xs mb-4 mt-6 before:h-[1px] after:h-[1px] text-gray-300">
+      Blogger options
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2">Name</label>
+      <input class="input input-primary w-full" />
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2">Name</label>
+      <input class="input input-primary w-full" />
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2">About</label>
+      <textarea class="textarea textarea-primary w-full"></textarea>
+    </div>
+    <div class="divider font-sans font-light text-xs mb-4 mt-6 before:h-[1px] after:h-[1px] text-gray-300">
+      Developer options
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2">Header content</label>
+      <textarea class="textarea textarea-primary w-full"></textarea>
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2">Body content</label>
+      <textarea class="textarea textarea-primary w-full"></textarea>
+    </div>
+    <div class="divider font-sans font-light text-xs mb-6 mt-6 before:h-[1px] after:h-[1px] text-gray-300"></div>
+    <div class="text-center">
+      <button type="button" class="btn btn-primary">Save blog settings</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

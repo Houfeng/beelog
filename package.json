@@ -32,21 +32,22 @@
     "url": "https://github.com/noka/noka.git"
   },
   "dependencies": {
-    "tslib": "2.6.2",
+    "@tailwindcss/forms": "^0.5.7",
     "noka": "2.4.3",
-    "noka-orm": "2.4.3"
+    "noka-orm": "2.4.3",
+    "tslib": "2.6.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/mocha": "10.0.6",
     "@types/node": "20.10.0",
-    "@tailwindcss/typography": "^0.5.10",
-    "pnpm": "8.11.0",
-    "typescript": "5.3.2",
     "daisyui": "^4.4.17",
-    "tailwindcss": "^3.3.5",
     "eslint-config-noka": "2.4.2",
     "noka-cli": "2.4.3",
-    "noka-tsconfig": "2.4.3"
+    "noka-tsconfig": "2.4.3",
+    "pnpm": "8.11.0",
+    "tailwindcss": "^3.3.5",
+    "typescript": "5.3.2"
   },
   "scripts": {
     "clean": "noka clean",
