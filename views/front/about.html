@@ -1,7 +1,7 @@
 {% extends "./layout.html" %}
 
 {% block head %}
-<title>About | Beelog</title>
+<title>About | {{setting.name}}</title>
 {% endblock %}
 
 {% block body %}
@@ -9,11 +9,9 @@
   <figure class="flex justify-center items-center">
     <img class="w-[200px] rounded-full" src="/images/beelog.jpg" />
   </figure>
-  <h1 class="text-3xl mt-4">Beelog</h1>
+  <h1 class="text-3xl mt-4">{{setting.name}}</h1>
   <p class="py-6">
-    一些介绍,一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍
-    一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍
-    一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍一些介绍
+    {{setting.description}}
   </p>
 </div>
 {% endblock %}

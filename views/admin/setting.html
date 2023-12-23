@@ -6,21 +6,23 @@
 
 {% block body %}
 <div class="w-full max-w-screen-md mx-auto bg-base-100">
-  <form class="mb-6 p-6">
+  <form class="mb-6 p-6" method="post" action="/admin/setting">
     <div class="divider font-sans font-light text-xs mb-4 mt-6 before:h-[1px] after:h-[1px] text-gray-300">
       Blogger options
     </div>
     <div class="mb-4">
       <label class="block mb-2">Avatar</label>
-      <input class="input input-primary w-full" />
+      <input name="avatar" class="input input-primary w-full" />
     </div>
     <div class="mb-4">
       <label class="block mb-2">Name</label>
-      <input class="input input-primary w-full" />
+      <input name="name" class="input input-primary w-full" value="{{setting.name}}" />
     </div>
     <div class="mb-4">
       <label class="block mb-2">Description</label>
-      <textarea class="textarea textarea-primary w-full"></textarea>
+      <textarea name="description" class="textarea textarea-primary w-full">
+        {{- setting.description -}}
+      </textarea>
     </div>
     <!-- <div class="divider font-sans font-light text-xs mb-4 mt-6 before:h-[1px] after:h-[1px] text-gray-300">
       Account options
@@ -38,15 +40,19 @@
     </div>
     <div class="mb-4">
       <label class="block mb-2">Page head content</label>
-      <textarea class="textarea textarea-primary w-full"></textarea>
+      <textarea name="pageHead" class="textarea textarea-primary w-full">
+        {{- setting.pageHead -}}
+      </textarea>
     </div>
     <div class="mb-4">
       <label class="block mb-2">Page body content</label>
-      <textarea class="textarea textarea-primary w-full"></textarea>
+      <textarea name="pageBody" class="textarea textarea-primary w-full">
+        {{- setting.pageBody -}}
+      </textarea>
     </div>
     <div class="divider font-sans font-light text-xs mb-6 mt-6 before:h-[1px] after:h-[1px] text-gray-300"></div>
     <div class="text-center">
-      <button type="button" class="btn btn-primary">Save all settings</button>
+      <button type="submit" class="btn btn-primary">Save all settings</button>
     </div>
   </form>
 </div>

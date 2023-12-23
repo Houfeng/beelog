@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-base-100 font-serif">
-  {% call header($context) %}
+  {% call header($context,setting) %}
   <ul class="menu menu-horizontal text-base/5">
     <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/' else ''}}" href="/">日志</a></li>
     <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/about' else ''}}" href="/about">关于</a></li>

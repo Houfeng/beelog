@@ -9,6 +9,7 @@ import {
   View,
 } from "noka";
 import { SettingService } from "../services/SettingService";
+import { Setting } from "../entities/Setting";
 
 const { Result } = Controller;
 
@@ -25,9 +26,9 @@ export class AdminController {
     @Form("password") password: string,
     @Context() context: HttpContext,
   ) {
-    const user = await this.settingService.auth(account, password);
-    if (user) {
-      context.session.userId = user?.id;
+    const setting = await this.settingService.auth(account, password);
+    if (setting) {
+      context.session.logged = 1;
       context.redirect("/admin/posts");
     } else {
       return Result({ error: "Login failed" });
@@ -42,16 +43,31 @@ export class AdminController {
   }
 
   @Get("/setting")
-  @Post("/setting")
   @View("admin/setting")
   async setting() {
-    return Result({});
+    const setting = await this.settingService.get();
+    return Result({ setting });
+  }
+
+  @Post("/setting")
+  @View("admin/setting")
+  async setting_save(
+    @Form("name") name: string,
+    @Form("description") description: string,
+    @Form("pageHead") pageHead: string,
+    @Form("pageBody") pageBody: string,
+  ) {
+    const setting = (await this.settingService.get()) || new Setting();
+    Object.assign(setting, { name, description, pageHead, pageBody });
+    await this.settingService.update(setting);
+    return Result({ setting });
   }
 
   @Get("/posts")
   @Post("/posts")
   @View("admin/posts")
   async posts() {
-    return Result({});
+    const setting = await this.settingService.get();
+    return Result({ setting });
   }
 }

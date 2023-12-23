@@ -25,8 +25,20 @@ export class SettingService {
   }
 
   async update(item: Partial<Setting>) {
-    if (item.password) item.password = this.hash.fromText(item.password || "");
-    else delete item.password;
+    if (item.password) {
+      item.password = this.hash.fromText(item.password || "");
+    } else {
+      delete item.password;
+    }
     return this.repo.save(item);
+  }
+
+  async get() {
+    return this.repo
+      ?.createQueryBuilder("item")
+      .orderBy("item.id", "DESC")
+      .skip(0)
+      .limit(1)
+      .getOne();
   }
 }

@@ -10,6 +10,7 @@ export class DBSetup {
   async handle() {
     if (await this.settingService.isEmpty()) {
       const setting = new Setting();
+      setting.name = "Beelog";
       setting.account = "Beelog";
       setting.password = "Beelog123";
       this.settingService.update(setting);

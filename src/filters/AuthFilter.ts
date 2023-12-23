@@ -4,7 +4,7 @@ import { HttpContext, Filter } from "noka";
 export class AuthFilter {
   async handle(ctx: HttpContext, next: () => Promise<any>) {
     if (ctx.path.startsWith("/admin/login")) return next();
-    if (ctx.session?.userId) return next();
+    if (ctx.session?.logged) return next();
     ctx.redirect("/admin/login");
   }
 }
