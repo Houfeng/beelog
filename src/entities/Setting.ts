@@ -5,13 +5,13 @@ export class Setting {
   @PrimaryGeneratedColumn()
   id?: string;
 
-  @Column()
+  @Column({ nullable: true })
   name!: string;
 
-  @Column()
+  @Column({ nullable: true })
   avatar!: string;
 
-  @Column()
+  @Column({ nullable: true })
   description!: string;
 
   @Column()
@@ -20,9 +20,9 @@ export class Setting {
   @Column()
   password!: string;
 
-  @Column()
+  @Column({ nullable: true })
   pageHead?: string;
 
-  @Column()
+  @Column({ nullable: true })
   pageBody?: string;
 }

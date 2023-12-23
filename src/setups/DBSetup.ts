@@ -1,8 +1,18 @@
-import { ApplicationLike, Setup } from "noka";
+import { Inject, Setup } from "noka";
+import { SettingService } from "../services/SettingService";
+import { Setting } from "../entities/Setting";
 
 @Setup("db")
 export class DBSetup {
-  handle(app: ApplicationLike) {
-    return `Current app root: ${app.rootDir}`;
+  @Inject()
+  settingService!: SettingService;
+
+  async handle() {
+    if (await this.settingService.isEmpty()) {
+      const setting = new Setting();
+      setting.account = "Beelog";
+      setting.password = "Beelog123";
+      this.settingService.update(setting);
+    }
   }
 }

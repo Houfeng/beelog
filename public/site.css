@@ -1128,11 +1128,6 @@ html {
   }
 }
 
-.form-control {
-  display: flex;
-  flex-direction: column;
-}
-
 .label {
   display: flex;
   -webkit-user-select: none;
@@ -2102,6 +2097,10 @@ html {
   width: 1.75rem;
 }
 
+.w-\[160px\] {
+  width: 160px;
+}
+
 .w-\[200px\] {
   width: 200px;
 }
@@ -2116,14 +2115,6 @@ html {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[100px\] {
-  width: 100px;
-}
-
-.w-\[160px\] {
-  width: 160px;
 }
 
 .max-w-screen-md {
@@ -2230,12 +2221,12 @@ html {
   padding-left: 0.75rem;
 }
 
-.pt-8 {
-  padding-top: 2rem;
-}
-
 .pt-24 {
   padding-top: 6rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-left {

@@ -1,8 +1,21 @@
-import { Controller, Form, Get, Post, View } from "noka";
+import {
+  Context,
+  Controller,
+  Form,
+  Get,
+  HttpContext,
+  Inject,
+  Post,
+  View,
+} from "noka";
+import { SettingService } from "../services/SettingService";
+
+const { Result } = Controller;
 
 @Controller("/admin")
 export class AdminController {
-  constructor() {}
+  @Inject()
+  settingService!: SettingService;
 
   @Get("/login")
   @Post("/login")
@@ -10,24 +23,35 @@ export class AdminController {
   async login(
     @Form("account") account: string,
     @Form("password") password: string,
+    @Context() context: HttpContext,
   ) {
-    return Controller.Result({
-      account,
-      password,
-    });
+    const user = await this.settingService.auth(account, password);
+    if (user) {
+      context.session.userId = user?.id;
+      context.redirect("/admin/posts");
+    } else {
+      return Result({ error: "Login failed" });
+    }
+  }
+
+  @Get("/login")
+  @Post("/login")
+  async logout(@Context() context: HttpContext) {
+    context.session.userId = null;
+    context.redirect("/");
   }
 
   @Get("/setting")
   @Post("/setting")
   @View("admin/setting")
   async setting() {
-    return Controller.Result({});
+    return Result({});
   }
 
   @Get("/posts")
   @Post("/posts")
   @View("admin/posts")
   async posts() {
-    return Controller.Result({});
+    return Result({});
   }
 }

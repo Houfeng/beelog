@@ -3,7 +3,8 @@ import { HttpContext, Filter } from "noka";
 @Filter("/admin/(.*)")
 export class AuthFilter {
   async handle(ctx: HttpContext, next: () => Promise<any>) {
-    ctx.logger?.debug(`Current request: ${ctx.URL}`);
-    await next();
+    if (ctx.path.startsWith("/admin/login")) return next();
+    if (ctx.session?.userId) return next();
+    ctx.redirect("/admin/login");
   }
 }
