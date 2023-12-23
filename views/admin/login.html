@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Beelog</title>
+  <link rel="stylesheet" type="text/css" href="/site.css" />
+</head>
+
+<body>
+  <div class="w-full max-w-screen-sm mx-auto bg-base-100 text-center pt-24">
+    <figure class="flex justify-center items-center">
+      <img class="w-[160px] rounded-full" src="/images/beelog.jpg" />
+    </figure>
+    <h1 class="text-3xl mt-4">Beelog</h1>
+    <form class="mb-6 p-6" method="post" action="/admin/login">
+      <div class="mb-4 text-left">
+        <label class="block mb-2">Account</label>
+        <input type="text" name="account" class="input input-primary w-full" />
+      </div>
+      <div class="mb-4 text-left">
+        <label class="block mb-2">Password</label>
+        <input type="password" name="password" class="input input-primary w-full" />
+      </div>
+      <div class="mb-4 mt-8 text-right">
+        <button type="submit" class="btn btn-primary w-full">Login</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
