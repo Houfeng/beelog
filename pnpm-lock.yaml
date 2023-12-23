@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   noka:
-    specifier: 2.4.3
-    version: 2.4.3
+    specifier: 2.4.4
+    version: 2.4.4
   noka-orm:
-    specifier: 2.4.3
-    version: 2.4.3
+    specifier: 2.4.4
+    version: 2.4.4
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -38,14 +38,14 @@ devDependencies:
     specifier: ^4.4.17
     version: 4.4.19(postcss@8.4.32)
   eslint-config-noka:
-    specifier: 2.4.2
-    version: 2.4.2
+    specifier: 2.4.4
+    version: 2.4.4
   noka-cli:
-    specifier: 2.4.3
-    version: 2.4.3(@types/node@20.10.0)
+    specifier: 2.4.4
+    version: 2.4.4(@types/node@20.10.0)
   noka-tsconfig:
-    specifier: 2.4.3
-    version: 2.4.3
+    specifier: 2.4.4
+    version: 2.4.4
   pnpm:
     specifier: 8.11.0
     version: 8.11.0
@@ -2260,30 +2260,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-noka@2.4.2:
-    resolution: {integrity: sha512-YjQU6ts9tsePIFdVehenzrj72TaSksUAjATOPhC3xaSEMMk+hC5qmL2Y7L+kgv7OJJJrGWguiWm7DMr5rxc4Uw==}
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 6.9.0(@typescript-eslint/parser@6.9.0)(eslint@8.52.0)(typescript@5.2.2)
-      '@typescript-eslint/parser': 6.9.0(eslint@8.52.0)(typescript@5.2.2)
-      eslint: 8.52.0
-      eslint-config-prettier: 9.0.0(eslint@8.52.0)
-      eslint-config-typescript: 3.0.0(@typescript-eslint/eslint-plugin@6.9.0)(@typescript-eslint/parser@6.9.0)(eslint@8.52.0)(typescript@5.2.2)
-      eslint-plugin-compat: 4.2.0(eslint@8.52.0)
-      eslint-plugin-import: 2.29.0(@typescript-eslint/parser@6.9.0)(eslint@8.52.0)
-      eslint-plugin-prettier: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.52.0)(prettier@3.0.3)
-      eslint-plugin-react: 7.33.2(eslint@8.52.0)
-      eslint-plugin-react-hooks: 4.6.0(eslint@8.52.0)
-      prettier: 3.0.3
-      typescript: 5.2.2
-    transitivePeerDependencies:
-      - '@types/eslint'
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-    dev: true
-
-  /eslint-config-noka@2.4.3:
-    resolution: {integrity: sha512-NacpcQEyJcAu75+mq8fsrjVwNjQ4y8zIoQjA2qXVsWPkNWK7mTBdh7lmifjjoQzW7WbwE15KS5CXg1HSerfkcw==}
+  /eslint-config-noka@2.4.4:
+    resolution: {integrity: sha512-ExBsOuRcldx1v89o8t7PL7pNxIbyLhZEMUtrFaSYSQb/PihIPaiJ6kU6MMSRyheNn1GDmR3OMzST05PfZT8EUA==}
     dependencies:
       '@typescript-eslint/eslint-plugin': 6.9.0(@typescript-eslint/parser@6.9.0)(eslint@8.52.0)(typescript@5.2.2)
       '@typescript-eslint/parser': 6.9.0(eslint@8.52.0)(typescript@5.2.2)
@@ -4880,8 +4858,8 @@ packages:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
     dev: true
 
-  /noka-cli@2.4.3(@types/node@20.10.0):
-    resolution: {integrity: sha512-pGVxMmpSnqU0JSRChUThR5FbG7soX+bVrbPxY3mE74N9xaFiVlRp4Mg8B1dvb6wTwy2pSP3XrmQOqsrf5K3Hfw==}
+  /noka-cli@2.4.4(@types/node@20.10.0):
+    resolution: {integrity: sha512-UhMm8+IuZ1d3BYEdVredo0gJKT1h1vzpGdAGLJNQf8docTZkVZjYUp+L1ljOtdfZWoh4xagzpMlRHqgx1LAT1w==}
     hasBin: true
     dependencies:
       '@typescript-eslint/eslint-plugin': 6.9.0(@typescript-eslint/parser@6.9.0)(eslint@8.52.0)(typescript@5.3.2)
@@ -4895,7 +4873,7 @@ packages:
       decompress: 4.2.0
       decompress-targz: 4.1.1
       eslint: 8.52.0
-      eslint-config-noka: 2.4.3
+      eslint-config-noka: 2.4.4
       eslint-config-prettier: 9.0.0(eslint@8.52.0)
       eslint-config-typescript: 3.0.0(@typescript-eslint/eslint-plugin@6.9.0)(@typescript-eslint/parser@6.9.0)(eslint@8.52.0)(typescript@5.3.2)
       eslint-plugin-compat: 4.2.0(eslint@8.52.0)
@@ -4909,8 +4887,8 @@ packages:
       inquirer: 6.3.1
       mocha: 10.2.0
       node-fetch: 2.6.0
-      noka-tsconfig: 2.4.3
-      noka-util: 2.4.3
+      noka-tsconfig: 2.4.4
+      noka-util: 2.4.4
       ntils: 5.2.4
       prettier: 3.0.3
       prop-types: 15.7.2
@@ -4933,11 +4911,11 @@ packages:
       - utf-8-validate
     dev: true
 
-  /noka-orm@2.4.3:
-    resolution: {integrity: sha512-ny9Eqq2jiK8Q29LS5HM179Jzt/QepbUF5KbGIhNXgLL2RK5N5NBA0gmeE8hMmrJc9KN51oOlra4WECtnNxPTfw==}
+  /noka-orm@2.4.4:
+    resolution: {integrity: sha512-VI5G9SDofPAMhR/mh/wWBPnoOoA0D/gFiKFH33A4wygP0eRPbH5BwQZjUMixOnZ4utgsWXoXdfdBjrZtDYoyrQ==}
     dependencies:
-      noka: 2.4.3
-      noka-util: 2.4.3
+      noka: 2.4.4
+      noka-util: 2.4.4
       reflect-metadata: 0.1.13
       sqlite: 5.1.1
       sqlite3: 5.1.6
@@ -4967,24 +4945,24 @@ packages:
       - utf-8-validate
     dev: false
 
-  /noka-tsconfig@2.4.3:
-    resolution: {integrity: sha512-H9FLB5SnWeWMCU4mvluHMC7jDx2ZVpZ3n1qflC9irSibTmcHNQf3XF71qJLy+SnsPgBADpyyfslLkb2SFgFgvQ==}
+  /noka-tsconfig@2.4.4:
+    resolution: {integrity: sha512-f+7+goFpzYudGemu2VU2gqeTJ3kr2OvcwzCP6uWe18FHv2dRnzkGd1Sfyd5KPGi+5wVqjU1/3V2JYTNqXPt7sw==}
     dependencies:
       '@types/node': 20.10.0
       pnpm: 8.11.0
       typescript: 5.3.2
     dev: true
 
-  /noka-util@2.4.3:
-    resolution: {integrity: sha512-/glzs18tF1equGpK9PqIwV2FUyCt4A5NXfRhCT2gZSUk8BZ5YIaHzkzYs4Sl9lQsgkCH3+MYrRKzY3YwI1wLyQ==}
+  /noka-util@2.4.4:
+    resolution: {integrity: sha512-ujNE+ew8Tmfezt2T5GO1yckwggABeg/sLIEe9E0doZIdQhDZcxB1nLPQWnosQkBtJFioII7ySv3NZflzGVFr7A==}
     dependencies:
       del: 4.1.1
       mkdirp: 3.0.1
       ntils: 5.2.4
       tslib: 2.6.2
 
-  /noka@2.4.3:
-    resolution: {integrity: sha512-nkiyHMYb4XxylBeb/Z3ByOnZo0VsiIByu+06XLV5j6By6+C7Kf1rzOQNkTRmoncV/gTVoASw/Ey+ba3nRcwWVA==}
+  /noka@2.4.4:
+    resolution: {integrity: sha512-ekPtm1QJtt2cA6y6gvQ7s2N/1QygcLpI93dTtOBEkg7udfkyn2WkKcACc4yUJwOsrjH3Zc7g+kmK4gXmJ0Bf+w==}
     dependencies:
       chokidar: 3.5.3
       confman: 0.2.10
@@ -5000,7 +4978,7 @@ packages:
       koa-session: 6.4.0
       koa-static: 5.0.0
       mime: 3.0.0
-      noka-util: 2.4.3
+      noka-util: 2.4.4
       nunjucks: 3.2.4(chokidar@3.5.3)
       reflect-metadata: 0.1.13
       tslib: 2.6.2

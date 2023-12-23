@@ -1,4 +1,4 @@
-{%- from "./header.html" import header -%}
+{%- from "../common/header.html" import header -%}
 <html data-theme="{{$context.cookies.get('theme') | default('light')}}">
 
 <head>
@@ -10,8 +10,8 @@
 <body class="bg-base-100 font-serif">
   {% call header($context) %}
   <ul class="menu menu-horizontal text-base/5">
-    <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/write' else ''}}" href="/write">写作</a></li>
-    <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/setting' else ''}}" href="/setting">设置</a></li>
+    <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/admin/posts' else ''}}" href="/admin/posts">日志</a></li>
+    <li class="mx-1"><a class="{{ 'active' if $context.URL.pathname==='/admin/setting' else ''}}" href="/admin/setting">设置</a></li>
   </ul>
   {% endcall %}
   {% block body %}{% endblock %}
