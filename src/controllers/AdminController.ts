@@ -7,11 +7,10 @@ import {
   Inject,
   Post,
   View,
+  Result,
 } from "noka";
 import { SettingService } from "../services/SettingService";
 import { Setting } from "../entities/Setting";
-
-const { Result } = Controller;
 
 @Controller("/admin")
 export class AdminController {
@@ -29,9 +28,9 @@ export class AdminController {
     const setting = await this.settingService.auth(account, password);
     if (setting) {
       context.session.logged = 1;
-      context.redirect("/admin/posts");
+      return Result.redirect("/admin/posts");
     } else {
-      return Result({ error: "Login failed" });
+      return Result.unauthorized({ error: "Login failed" });
     }
   }
 
@@ -46,7 +45,7 @@ export class AdminController {
   @View("admin/setting")
   async setting() {
     const setting = await this.settingService.get();
-    return Result({ setting });
+    return Result.ok({ setting });
   }
 
   @Post("/setting")
@@ -60,7 +59,7 @@ export class AdminController {
     const setting = (await this.settingService.get()) || new Setting();
     Object.assign(setting, { name, description, pageHead, pageBody });
     await this.settingService.update(setting);
-    return Result({ setting });
+    return Result.ok({ setting });
   }
 
   @Get("/posts")
@@ -68,6 +67,6 @@ export class AdminController {
   @View("admin/posts")
   async posts() {
     const setting = await this.settingService.get();
-    return Result({ setting });
+    return Result.ok({ setting });
   }
 }

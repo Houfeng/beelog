@@ -1,4 +1,4 @@
-import { Controller, Get, Inject, View } from "noka";
+import { Controller, Get, Inject, Result, View } from "noka";
 import { SettingService } from "../services/SettingService";
 
 @Controller("/")
@@ -10,7 +10,7 @@ export class HomeController {
   @View("front/index")
   async index() {
     const setting = await this.settingService.get();
-    return Controller.Result({
+    return Result.ok({
       setting,
       posts: new Array(10).fill(1),
     });
@@ -20,13 +20,13 @@ export class HomeController {
   @View("front/post")
   async post() {
     const setting = await this.settingService.get();
-    return Controller.Result({ setting });
+    return Result.ok({ setting });
   }
 
   @Get("/about")
   @View("front/about")
   async about() {
     const setting = await this.settingService.get();
-    return Controller.Result({ setting });
+    return Result.ok({ setting });
   }
 }
